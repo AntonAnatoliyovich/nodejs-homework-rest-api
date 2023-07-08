@@ -2,7 +2,11 @@ const { Contact } = require("../../models");
 
 const asyncHandler = require("express-async-handler");
 
-const HttpError = require("../../helpers");
+const { Contact } = require("../../models");
+
+const asyncHandler = require("express-async-handler");
+
+const { HttpError } = require("../../helpers");
 
 const updateStatusContact = asyncHandler(async (req, res) => {
     const { contactId } = req.params;

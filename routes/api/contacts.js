@@ -12,40 +12,40 @@ const router = express.Router();
 router.get("/", authenticate, contactController.getAllContacts);
 
 router.get(
-  "/:contactId",
-  authenticate,
-  isValidId,
-  contactController.getContactById
+    "/:contactId",
+    authenticate,
+    isValidId,
+    contactController.getContactById
 );
 
 router.post(
-  "/",
-  authenticate,
-  validateBody(contactsSchema.addSchema),
-  contactController.postContact
+    "/",
+    authenticate,
+    validateBody(contactsSchema.addSchema),
+    contactController.postContact
 );
 
 router.delete(
-  "/:contactId",
-  authenticate,
-  isValidId,
-  contactController.deleteContact
+    "/:contactId",
+    authenticate,
+    isValidId,
+    contactController.deleteContact
 );
 
 router.put(
-  "/:contactId",
-  authenticate,
-  isValidId,
-  validateBody(contactsSchema.addSchema),
-  contactController.updateContactById
+    "/:contactId",
+    authenticate,
+    isValidId,
+    validateBody(contactsSchema.addSchema),
+    contactController.updateContactById
 );
 
 router.patch(
-  "/:contactId/favorite",
-  authenticate,
-  isValidId,
-  validateBody(contactsSchema.statusSchema),
-  contactController.updateStatusContact
+    "/:contactId/favorite",
+    authenticate,
+    isValidId,
+    validateBody(contactsSchema.statusSchema),
+    contactController.updateStatusContact
 );
 
 module.exports = router;

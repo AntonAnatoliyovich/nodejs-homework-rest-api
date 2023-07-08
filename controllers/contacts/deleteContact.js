@@ -2,7 +2,7 @@ const { Contact } = require("../../models");
 
 const asyncHandler = require("express-async-handler");
 
-const HttpError = require("../../helpers");
+const { HttpError } = require("../../helpers");
 
 const deleteContact = asyncHandler(async (req, res) => {
     const { contactId } = req.params;
@@ -19,3 +19,4 @@ const deleteContact = asyncHandler(async (req, res) => {
 });
 
 module.exports = deleteContact;
+
